@@ -1,0 +1,72 @@
+1.
+fun transcribeToRna(dna: String): String {
+  if (dna == null || dna.isEmpty()) {
+    return dna
+  }
+
+  var rna = ""
+
+  for (nucleotide in dna) {
+    if (nucleotide == 'G') {
+      rna += 'C'
+    }
+    else if (nucleotide == 'C') {
+      rna += 'G'
+    }
+    else if (nucleotide == 'T') {
+      rna += 'A'
+    }
+    else {
+      rna += 'U'
+    }
+  }
+
+  return rna
+}
+fun main() {
+    var a:String = "GCTAAAT"
+	print(transcribeToRna(a))
+}
+//////////////////////////
+2.
+fun acronym(input:String):String{
+    if (input == null || input.isEmpty()) {
+    	return input
+  	}
+    var acr:String = ""
+    for(i in input){
+        if (i.isUpperCase()){
+            acr+=i
+        }
+    }
+    return acr
+}
+fun main() {
+    var a = "A Long Time"
+	print(acronym(a))
+}
+/////////////////////////////////
+3.
+fun num2Str(a:Int):String{
+    var out = ""
+    for(i in 1..a/2){
+        if(a%i==0){
+            if (i==3||a==3){
+                out+="Pling"
+            }
+            if(i==5||a==5){
+               out+="Plang"
+            }
+            if(i==7||a==7){
+               out+="Plong"
+            }
+        }
+    }
+    if (out.isEmpty()){
+        out+=a
+    }
+    return out
+}
+fun main() {
+	print (num2Str(0))
+}
